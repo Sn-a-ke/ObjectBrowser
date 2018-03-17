@@ -5,7 +5,7 @@
 #include "PropertyEditorModule.h"
 #include "IDetailsView.h"
 #include "EditorFontGlyphs.h"
-
+#include "Engine/Engine.h"
 #include "ClassViewerModule.h"
 #include "SClassPickerDialog.h"
 
@@ -36,7 +36,7 @@ void SObjectBrowser::Construct( const FArguments& InArgs )
 		/*InNotifyHook=*/ nullptr,
 		/*InSearchInitialKeyFocus=*/ false,
 		/*InViewIdentifier=*/ NAME_None);
-	DetailsViewArgs.DefaultsOnlyVisibility = FDetailsViewArgs::EEditDefaultsOnlyNodeVisibility::Automatic;
+	DetailsViewArgs.DefaultsOnlyVisibility = EEditDefaultsOnlyNodeVisibility::Automatic;
 
 	PropertyView = EditModule.CreateDetailView(DetailsViewArgs);
 
